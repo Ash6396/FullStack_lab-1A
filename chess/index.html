@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dynamic Chessboard</title>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Dynamic Chessboard</h1>
+
+    <div id="chessboard"></div>
+
+    <script>
+
+        // Get chessboard container
+        const chessboard = document.getElementById("chessboard");
+
+
+        // Apply CSS using JavaScript
+
+        chessboard.style.width = "640px";
+        chessboard.style.height = "640px";
+
+        chessboard.style.display = "grid";
+
+        chessboard.style.gridTemplateColumns = "repeat(8, 1fr)";
+        chessboard.style.gridTemplateRows = "repeat(8, 1fr)";
+
+        chessboard.style.border = "5px solid black";
+
+        chessboard.style.margin = "30px auto";
+
+
+        // Chess pieces
+
+        const pieces = {
+
+            0: ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"],
+
+            1: ["♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"],
+
+            6: ["♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙"],
+
+            7: ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"]
+
+        };
+
+
+        // Create 64 cells
+
+        for (let row = 0; row < 8; row++) {
+
+            for (let col = 0; col < 8; col++) {
+
+                // Create cell
+                const cell = document.createElement("div");
+
+
+                // Apply cell size
+                cell.style.width = "80px";
+                cell.style.height = "80px";
+
+
+                // Chessboard colors
+
+                if ((row + col) % 2 === 0) {
+
+                    cell.style.backgroundColor = "#f0d9b5";
+
+                } else {
+
+                    cell.style.backgroundColor = "#b58863";
+
+                }
+
+
+                // Center the chess piece
+
+                cell.style.display = "flex";
+                cell.style.justifyContent = "center";
+                cell.style.alignItems = "center";
+
+
+                // Set chess piece size
+
+                cell.style.fontSize = "55px";
+
+
+                if (pieces[row]) {
+
+                    cell.textContent = pieces[row][col];
+
+                }
+
+
+                chessboard.appendChild(cell);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

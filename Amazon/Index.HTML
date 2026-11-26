@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#131921">
+  <title>Amazon-style Storefront</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="nav-logo nav-item" href="#" aria-label="Amazon home">
+        <img src="images/amazon_logo.png" alt="Amazon">
+      </a>
+      <a class="address nav-item" href="#products">
+        <span class="deliver">Deliver to</span>
+        <span class="map-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+          <strong>Agra</strong>
+        </span>
+      </a>
+      <form class="nav-search" id="search-form" role="search">
+        <label class="sr-only" for="category-filter">Filter by category</label>
+        <select class="select-search" id="category-filter" aria-label="Filter by category">
+          <option value="all">All</option>
+        </select>
+        <label class="sr-only" for="catalog-search">Search products</label>
+        <input id="catalog-search" type="search" placeholder="Search products" class="search-input">
+        <button class="search-icon" type="submit" aria-label="Search">
+          <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        </button>
+      </form>
+      <a class="sign-in nav-item" href="#seller">
+        <span>Seller tools</span>
+        <strong>Manage products</strong>
+      </a>
+      <a class="returns nav-item" href="#orders">
+        <span>Returns</span>
+        <strong>&amp; Orders</strong>
+      </a>
+      <a class="cart nav-item" href="#cart" aria-label="Cart, 0 items">
+        <span class="cart-count" id="cart-count">0</span>
+        <span class="material-symbols-outlined cart-icon" aria-hidden="true">shopping_cart</span>
+        <strong>Cart</strong>
+      </a>
+    </nav>
+    <div class="banner">
+      <div class="banner-content">
+        <a class="panel" href="#products">
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+          <strong>Shop</strong>
+        </a>
+        <ul class="links">
+          <li><a href="#products">All products</a></li>
+          <li><a href="#orders">Your orders</a></li>
+          <li><a href="#seller">Seller panel</a></li>
+        </ul>
+        <a class="deals" href="#cart">Your cart</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Good finds. Great prices.</p>
+        <h1 id="hero-title">Make every day<br> a little better.</h1>
+        <p class="hero-copy">Discover everyday essentials and the latest tech, all in one place.</p>
+        <a class="hero-button" href="#products">Explore all products</a>
+      </div>
+      <div class="hero-art">
+        <span class="hero-badge">Deals you'll love</span>
+        <img src="images/img-1.png" alt="Featured laptop and tablet">
+      </div>
+    </section>
+
+    <section class="store-section" id="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Browse the collection</p>
+          <h2 id="products-title">All products</h2>
+        </div>
+        <span class="result-count" id="result-count"></span>
+      </div>
+      <div id="product-grid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="store-section cart-section" id="cart" aria-labelledby="cart-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Ready when you are</p>
+          <h2 id="cart-title">Your cart <span class="heading-count" id="cart-heading-count">(0)</span></h2>
+        </div>
+      </div>
+      <div class="cart-layout">
+        <div id="cart-items" class="cart-items" aria-live="polite"></div>
+        <aside class="cart-summary" aria-label="Order summary">
+          <h3>Order summary</h3>
+          <div class="summary-line"><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div>
+          <div class="summary-line"><span>Delivery</span><strong class="free-delivery">FREE</strong></div>
+          <div class="summary-total"><span>Order total</span><strong id="cart-total">₹0</strong></div>
+          <button type="button" class="primary-button checkout-toggle" id="checkout-toggle" disabled>Proceed to checkout</button>
+          <form id="checkout-form" class="checkout-form" hidden>
+            <h4>Delivery details</h4>
+            <label for="customer-name">Full name</label>
+            <input id="customer-name" name="name" autocomplete="name" required maxlength="80">
+            <label for="customer-email">Email</label>
+            <input id="customer-email" name="email" type="email" autocomplete="email" required maxlength="120">
+            <label for="customer-address">Delivery address</label>
+            <textarea id="customer-address" name="address" autocomplete="street-address" rows="3" required maxlength="300"></textarea>
+            <label for="payment-method">Payment method</label>
+            <select id="payment-method" name="payment" required>
+              <option value="demo-card">Card (demo simulation)</option>
+              <option value="demo-upi">UPI (demo simulation)</option>
+              <option value="cod">Cash on delivery (simulation)</option>
+            </select>
+            <p class="demo-note">Demo checkout only. No real payment is processed and no card/UPI details are collected.</p>
+            <button type="submit" class="primary-button">Place demo order</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="store-section" id="orders" aria-labelledby="orders-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Your purchases</p>
+          <h2 id="orders-title">Your orders</h2>
+        </div>
+      </div>
+      <div id="orders-list" class="orders-list" aria-live="polite"></div>
+    </section>
+
+    <section class="store-section seller-section" id="seller" aria-labelledby="seller-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Manage your catalog</p>
+          <h2 id="seller-title">Seller panel</h2>
+        </div>
+      </div>
+      <p class="demo-note seller-note">Demo seller panel: product changes are saved only in this browser. Add products you have permission to sell.</p>
+      <div class="seller-layout">
+        <form id="product-form" class="seller-form">
+          <h3 id="product-form-title">Add a product</h3>
+          <input type="hidden" name="product-id" id="product-id">
+          <label for="product-name">Product name</label>
+          <input id="product-name" name="name" required maxlength="80">
+          <label for="product-category">Category</label>
+          <input id="product-category" name="category" required maxlength="40" placeholder="e.g. Electronics">
+          <label for="product-price">Price (INR)</label>
+          <input id="product-price" name="price" type="number" min="1" max="10000000" step="1" required>
+          <label for="product-description">Description</label>
+          <textarea id="product-description" name="description" rows="3" required maxlength="240"></textarea>
+          <label for="product-image">Product image</label>
+          <select id="product-image" name="image">
+            <option value="laptop">Laptop &amp; tablet</option>
+            <option value="watch">Smartwatch</option>
+            <option value="lights">Room lighting</option>
+            <option value="headphones">Headphones icon</option>
+            <option value="chair">Chair icon</option>
+            <option value="phone">Phone icon</option>
+          </select>
+          <div class="seller-form-actions">
+            <button type="submit" class="primary-button" id="save-product-button">Add product</button>
+            <button type="button" class="secondary-button" id="cancel-edit-button" hidden>Cancel edit</button>
+          </div>
+        </form>
+        <div class="seller-products">
+          <h3>Manage products <span id="seller-product-count" class="muted-count"></span></h3>
+          <div id="seller-product-list" class="seller-product-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="footer-title">Back to top</a>
+    <div class="footer-items">
+      <section>
+        <h3>Get to Know Us</h3>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Release</a></li>
+          <li><a href="#">Amazon Science</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Connect with Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Make Money with Us</h3>
+        <ul>
+          <li><a href="#seller">Sell on Amazon</a></li>
+          <li><a href="#">Become an Affiliate</a></li>
+          <li><a href="#">Advertise Your Products</a></li>
+          <li><a href="#">Amazon Global Selling</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Let Us Help You</h3>
+        <ul>
+          <li><a href="#">Your Account</a></li>
+          <li><a href="#orders">Returns Centre</a></li>
+          <li><a href="#">Purchase Protection</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </section>
+    </div>
+  </footer>
+  <div id="app-status" class="app-status" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

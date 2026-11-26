@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>10 Cards</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Container for all cards */
+        .card-container {
+            display: flex;
+            gap: 20px;
+
+            /* Keeps cards horizontally aligned */
+            flex-wrap: nowrap;
+
+            /* Allows horizontal scrolling if required */
+            overflow-x: auto;
+
+            padding: 20px;
+        }
+
+        /* Individual card */
+        .card {
+            min-width: 250px;
+            width: 250px;
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+            transition: transform 0.3s;
+        }
+
+        /* Card hover effect */
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Card image */
+        .card img {
+            width: 100%;
+            height: 160px;
+
+            object-fit: cover;
+        }
+
+        /* Card content */
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My 10 Cards</h1>
+
+    <div class="card-container">
+
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=1" alt="Nature">
+            <div class="card-content">
+                <h2 class="card-title">Nature</h2>
+                <p class="card-description">
+                    Explore the beauty and peacefulness of nature.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=2" alt="Mountain">
+            <div class="card-content">
+                <h2 class="card-title">Mountain</h2>
+                <p class="card-description">
+                    Mountains provide beautiful views and exciting adventures.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=3" alt="Ocean">
+            <div class="card-content">
+                <h2 class="card-title">Ocean</h2>
+                <p class="card-description">
+                    The ocean is home to countless beautiful marine creatures.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=4" alt="Forest">
+            <div class="card-content">
+                <h2 class="card-title">Forest</h2>
+                <p class="card-description">
+                    Forests are important for maintaining a healthy environment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=5" alt="Desert">
+            <div class="card-content">
+                <h2 class="card-title">Desert</h2>
+                <p class="card-description">
+                    Deserts are fascinating places with unique landscapes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=6" alt="City">
+            <div class="card-content">
+                <h2 class="card-title">City</h2>
+                <p class="card-description">
+                    Modern cities are full of technology, buildings and people.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=7" alt="Travel">
+            <div class="card-content">
+                <h2 class="card-title">Travel</h2>
+                <p class="card-description">
+                    Travelling allows us to discover new places and cultures.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=8" alt="Space">
+            <div class="card-content">
+                <h2 class="card-title">Space</h2>
+                <p class="card-description">
+                    Space is full of mysteries, planets, stars and galaxies.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=9" alt="Wildlife">
+            <div class="card-content">
+                <h2 class="card-title">Wildlife</h2>
+                <p class="card-description">
+                    Wildlife includes fascinating animals living in their natural habitats.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="card">
+            <img src="https://picsum.photos/300/200?random=10" alt="Adventure">
+            <div class="card-content">
+                <h2 class="card-title">Adventure</h2>
+                <p class="card-description">
+                    Adventure gives us exciting experiences and unforgettable memories.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
